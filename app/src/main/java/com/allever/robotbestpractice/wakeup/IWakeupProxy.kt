@@ -7,4 +7,5 @@ interface IWakeupProxy {
     fun setListener(wakeupListener: WakeupListener)
     fun startWakeup()
     fun stopWakeup()
+    fun destroy()
 }

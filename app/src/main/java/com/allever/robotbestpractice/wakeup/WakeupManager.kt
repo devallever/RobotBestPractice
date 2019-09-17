@@ -28,4 +28,8 @@ object WakeupManager {
         mProxy?.stopWakeup()
     }
 
+    fun destroy() {
+        mProxy?.destroy()
+    }
+
 }
