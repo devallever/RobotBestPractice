@@ -20,4 +20,12 @@ object WakeupManager {
         mProxy?.setListener(listener)
     }
 
+    fun startWakeup() {
+        mProxy?.startWakeup()
+    }
+
+    fun stopWakeup() {
+        mProxy?.stopWakeup()
+    }
+
 }
