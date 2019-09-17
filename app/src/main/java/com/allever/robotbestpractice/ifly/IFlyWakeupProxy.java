@@ -130,7 +130,6 @@ public class IFlyWakeupProxy implements IWakeupProxy {
         @Override
         public void onVolumeChanged(int volume) {
             log("onVolumeChanged " + volume);
-
         }
     };
 
