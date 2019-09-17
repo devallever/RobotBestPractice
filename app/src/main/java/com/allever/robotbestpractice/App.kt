@@ -9,5 +9,6 @@ class App: Application() {
         super.onCreate()
         WakeupManager.setProxy(IFlyWakeupProxy())
         WakeupManager.init(this)
+        
     }
 }
