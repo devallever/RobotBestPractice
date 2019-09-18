@@ -8,4 +8,6 @@ interface IWakeupProxy {
     fun startWakeup()
     fun stopWakeup()
     fun destroy()
+    fun enhanceAhead()
+    fun enhanceAround()
 }

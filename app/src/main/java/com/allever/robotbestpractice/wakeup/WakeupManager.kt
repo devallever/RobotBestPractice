@@ -2,12 +2,25 @@ package com.allever.robotbestpractice.wakeup
 
 import android.content.Context
 
-object WakeupManager {
+object WakeupManager: IWakeupProxy {
+    override fun setListener(wakeupListener: WakeupListener) {
+        mWakeupListener = wakeupListener
+        mProxy?.setListener(wakeupListener)
+    }
+
+    override fun enhanceAhead() {
+        mProxy?.enhanceAhead()
+    }
+
+    override fun enhanceAround() {
+        mProxy?.enhanceAround()
+    }
+
     private var mWakeupListener: WakeupListener? = null
 
     private var mProxy: IWakeupProxy? = null
 
-    fun init(context: Context) {
+    override fun init(context: Context) {
         mProxy?.init(context)
     }
 
@@ -15,20 +28,15 @@ object WakeupManager {
         mProxy = proxy
     }
 
-    fun setWakeupListener(listener: WakeupListener) {
-        mWakeupListener = listener
-        mProxy?.setListener(listener)
-    }
-
-    fun startWakeup() {
+    override fun startWakeup() {
         mProxy?.startWakeup()
     }
 
-    fun stopWakeup() {
+    override fun stopWakeup() {
         mProxy?.stopWakeup()
     }
 
-    fun destroy() {
+    override fun destroy() {
         mProxy?.destroy()
     }
 
